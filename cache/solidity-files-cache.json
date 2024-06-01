@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Mr. OLA\\Documents\\Golang\\supra\\contracts\\Supra.sol": {
+      "lastModificationDate": 1717231145425,
+      "contentHash": "881ffb9d9199834929accb0c17cd7f6b",
+      "sourceName": "contracts/Supra.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "ISupraOraclePull",
+        "Supra"
+      ]
+    }
+  }
+}
