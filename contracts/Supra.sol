@@ -2,18 +2,23 @@
 pragma solidity 0.8.19;
 
 interface ISupraOraclePull {
-    //Verified price data
+    /**
+     * @dev Verified price data structure.
+     * @param pairs List of pairs.
+     * @param prices List of prices corresponding to the pairs.
+     * @param decimals List of decimals corresponding to the pairs.
+     */
     struct PriceData {
-        // List of pairs
         uint256[] pairs;
-        // List of prices
-        // prices[i] is the price of pairs[i]
         uint256[] prices;
-        // List of decimals
-        // decimals[i] is the decimals of pairs[i]
         uint256[] decimals;
     }
 
+    /**
+     * @dev Verifies oracle proof and returns price data.
+     * @param _bytesproof The proof data in bytes.
+     * @return PriceData Verified price data.
+     */
     function verifyOracleProof(
         bytes calldata _bytesproof
     ) external returns (PriceData memory);
