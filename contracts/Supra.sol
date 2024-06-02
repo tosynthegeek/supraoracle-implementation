@@ -45,6 +45,13 @@ contract Supra {
     function updatePullAddress(address oracle_) external {
         oracle = ISupraOraclePull(oracle_);
     }
+
+    function getLatestPrice(
+        uint256 pairId
+    ) external view returns (uint256 price, uint256 decimals) {
+        price = latestPrices[pairId];
+        decimals = latestDecimals[pairId];
+    }
 }
 
 // const txData = contract.methods.deliverPriceData(hex).encodeABI(); // function from you contract eg: deliverPriceData
