@@ -32,9 +32,21 @@ contract Supra {
     // The oracle contract
     ISupraOraclePull internal oracle;
 
+   // Stores the latest price data for a specific pair
+    mapping(uint256 => uint256) public latestPrices;
+    mapping(uint256 => uint256) public latestDecimals;
+
+    // Event to notify when a price threshold is met
+    event PriceThresholdMet(uint256 pairId, uint256 price);
+
+    /**
+     * @dev Sets the oracle contract address.
+     * @param oracle_ The address of the oracle contract.
+     */
     constructor(address oracle_) {
         oracle = ISupraOraclePull(oracle_);
     }
+
     // Extract price data from the bytes/proof data
     function deliverPriceData(bytes calldata _bytesProof) external {
         ISupraOraclePull.PriceData memory prices = oracle.verifyOracleProof(
