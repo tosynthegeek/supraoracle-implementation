@@ -24,7 +24,10 @@ interface ISupraOraclePull {
     ) external returns (PriceData memory);
 }
 
-// Mock contract which can consume oracle pull data
+/**
+ * @title Supra
+ * @dev Mock contract which can consume oracle pull data.
+ */
 contract Supra {
     // The oracle contract
     ISupraOraclePull internal oracle;
@@ -58,6 +61,3 @@ contract Supra {
         decimals = latestDecimals[pairId];
     }
 }
-
-// const txData = contract.methods.deliverPriceData(hex).encodeABI(); // function from you contract eg: deliverPriceData
-// const gasEstimate = await contract.methods.deliverPriceData(hex).estimateGas({from: walletAddress});
